@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+    <h1 th:text="${message}"></h1>
+<!--    <img th:src="${src.src1}"/><br>
+    <img th:src="${src.src2}"/><br>
+    <img th:src="${src.src3}"/><br>
+    <sapn th:text="${user.id}"></sapn><br>
+    <sapn th:text="${user.age}"></sapn><br>
+    <sapn th:text="${user.name}"></sapn><br>-->
+<!--<table>
+    <tr>
+        <td>编号</td>
+        <td>姓名</td>
+        <td>年龄</td>
+        <td>index</td>
+        <td>size</td>
+        <td>current</td>
+        <td>even</td>
+        <td>odd</td>
+        <td>first</td>
+        <td>last</td>
+    </tr>
+    <tr th:each="user,x:${list}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.age}"></td>
+        <td th:text="${x.index}"></td>
+        <td th:text="${x.size}"></td>
+        <td th:text="${x.current}"></td>
+        <td th:text="${x.even}"></td>
+        <td th:text="${x.odd}"></td>
+        <td th:text="${x.first}"></td>
+        <td th:text="${x.last}"></td>
+    </tr>
+</table>-->
+<!--<input type="text" name="names" th:value="${userName}"/><br>
+<em th:size="${userName}"></em><br>
+&lt;!&ndash;字符串拼接1&ndash;&gt;
+<span th:text="'欢迎: '+${userName}+'来学习!'"></span><br>
+&lt;!&ndash;字符串拼接2&ndash;&gt;
+<span th:text="|欢迎: ${userName}来学习!|"></span><br>
+<div th:if="${flag=='yes'}"><h1 th:text="${manager}"></h1></div>
+<div th:switch="${menu}">
+    <p th:case="'admin'">This user is an admin</p>
+    <p th:case="${manager}">This user is a manager</p>
+</div>-->
+<!--把片段所有内容插入当前所有位置-->
+<div th:insert="~{foot::copy}"></div><br>
+<!--使用片段的内容替换当前标签-->
+<div th:replace="~{foot::copy}"></div><br>
+<!--保留自己的主标签，不要片段的主标签-->
+<div th:include="~{foot::copy}"></div><br>
+
+时间：<span th:text="${#dates.format(date,'yyyy-MM-dd HH:mm:ss')}">3344332</span><br>
+金额：<span th:text="|￥${#numbers.formatDecimal(price,4,2)}|">123</span><br>
+截取字符串：<span th:text="${#strings.substring(text,1,4)}">字符串text的值</span>
+</body>
+</html>
